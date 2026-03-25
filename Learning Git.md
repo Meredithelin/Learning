@@ -26,19 +26,46 @@
 - `git rm <file>`：从工作区和索引中删除文件。
 
 ## 3. 分支管理与冲突解决
-### 3.1 分支基本操作
-- `git branch`：查看本地分支；`-a` 查看所有分支（含远程）。
+### 3.1 分支基本操作 (Detailed git branch)
+- `git branch`：查看本地分支。
+- `git branch -a`：查看所有分支（本地 + 远程追踪分支）。
+- `git branch -v`：查看每个分支的最后一次提交。
+- `git branch <name>`：创建一个新分支，但不切换。
 - `git switch -c <name>`：**推荐**。创建并切换到新分支（替代旧的 `git checkout -b`）。
+- `git branch -d <name>`：删除已合并的分支。
+- `git branch -D <name>`：强制删除未合并的分支。
+- `git branch -m <old> <new>`：重命名分支。
+- `git branch --merged`：查看哪些分支已经合并到当前分支。
+- `git branch --no-merged`：查看哪些分支尚未合并。
+
+### 3.2 合并与冲突解决
 - `git merge <name>`：合并指定分支到当前分支。
 - `git merge --squash <name>`：压缩合并。将分支上的多次提交合并为一次提交再合入。
 - `git cherry-pick <commit_id>`：挑拣提交。将另一个分支上的特定提交应用到当前分支。
 
-### 3.2 冲突解决 (Conflict Resolution)
-当两个分支修改了同一个文件的同一行时，合并会产生冲突。
+**冲突解决 (Conflict Resolution)**：
 1. **定位冲突**：Git 会在文件中插入冲突标记 `<<<<<<<`, `=======`, `>>>>>>>`。
 2. **人工抉择**：编辑文件，保留想要的代码，删除 Git 插入的标记。
 3. **完成合并**：执行 `git add <file>` 标记冲突已解决，然后 `git commit`。
 4. **中止合并**：若想撤销合并过程，执行 `git merge --abort`。
+
+### 3.3 差异比较 (Detailed git diff)
+- `git diff`：比较**工作区** (Working Directory) 与**暂存区** (Index) 的差异。
+- `git diff --cached` 或 `git diff --staged`：比较**暂存区**与**最后一次提交** (HEAD) 的差异。
+- `git diff HEAD`：比较**工作区**与**最后一次提交**的差异。
+- `git diff <branch1> <branch2>`：比较两个分支之间的差异。
+- `git diff <commit1> <commit2>`：比较两次提交之间的差异。
+- `git diff --stat`：只显示统计摘要，而不显示具体的代码改动。
+
+### 3.3 理解 HEAD~1 与 相对引用
+Git 使用 `^` 和 `~` 来进行相对引用：
+- `HEAD`：当前所在的提交。
+- `HEAD~1` (或 `HEAD~`)：当前提交的**父提交**。
+- `HEAD~2`：父提交的父提交（爷爷提交）。
+- `HEAD^`：也是父提交。
+- **区别**：`~n` 总是沿着第一父节点回溯；`^n` 在合并提交时用于选择第几个父节点（例如 `HEAD^2` 指向合并进来的第二个分支）。
+
+---
 
 ## 4. 撤销与“后悔药”
 ### 4.1 修改最后一次提交
@@ -63,8 +90,11 @@
 - `git remote set-url origin <newurl>`：修改远程仓库地址。
 
 ### 5.2 协作流程
-- `git fetch`：拉取远程仓库的所有变动，但不自动合并。
-- `git pull --rebase`：**进阶推荐**。拉取并变基，保持提交历史线性整洁。
+- `git fetch`：**同步远程状态**。
+    - 它会下载远程仓库的所有新提交、分支和标签。
+    - 它会更新“远程追踪分支”（如 `origin/main`），但**不会**修改你本地的任何分支（如 `main`）。
+    - 你可以运行 `git diff main origin/main` 来查看远程有哪些新改动，而不用担心弄乱本地代码。
+- `git pull --rebase`：**进阶推荐**。相当于 `git fetch` + `git rebase`。拉取并变基，保持提交历史线性整洁。
 - `git push origin <branch>`：推送本地提交到远程分支。
 
 ## 6. 进阶：贮藏与标签
