@@ -27,16 +27,36 @@
 
 ## 3. 分支管理与冲突解决
 ### 3.1 分支基本操作 (Detailed git branch)
-- `git branch`：查看本地分支。
+
+**查看分支**
+- `git branch`：查看本地所有分支，当前分支前有 `*` 标记。
+- `git branch -r`：只查看**远程追踪**分支（如 `origin/main`）。
 - `git branch -a`：查看所有分支（本地 + 远程追踪分支）。
-- `git branch -v`：查看每个分支的最后一次提交。
-- `git branch <name>`：创建一个新分支，但不切换。
+- `git branch -v`：查看每个分支的最后一次提交（commit ID + 提交信息）。
+- `git branch -vv`：在 `-v` 基础上，还显示每个本地分支正在**跟踪哪个远程分支**，以及领先/落后多少次提交。
+
+**创建与切换分支**
+- `git branch <name>`：基于当前提交创建新分支，但不切换。
+- `git branch <name> <commit>`：基于指定提交或标签创建分支。
 - `git switch -c <name>`：**推荐**。创建并切换到新分支（替代旧的 `git checkout -b`）。
-- `git branch -d <name>`：删除已合并的分支。
-- `git branch -D <name>`：强制删除未合并的分支。
+- `git switch -c <name> origin/<name>`：创建本地分支并自动追踪同名远程分支。
+
+**删除与重命名**
+- `git branch -d <name>`：删除**已合并**的分支（安全删除）。
+- `git branch -D <name>`：**强制**删除未合并的分支（数据可能丢失）。
 - `git branch -m <old> <new>`：重命名分支。
-- `git branch --merged`：查看哪些分支已经合并到当前分支。
-- `git branch --no-merged`：查看哪些分支尚未合并。
+- `git push origin --delete <name>`：删除**远程**分支。
+
+**追踪关系（Tracking）**
+- `git branch --set-upstream-to=origin/<remote_branch> <local_branch>`：为已有本地分支设置追踪的远程分支。例如：
+  ```bash
+  git branch --set-upstream-to=origin/main main
+  ```
+- 设置追踪后，在该分支上直接执行 `git push` / `git pull` 即可，无需再指定远程和分支名。
+
+**筛选合并状态**
+- `git branch --merged`：查看哪些分支已经**合并**到当前分支（可安全删除）。
+- `git branch --no-merged`：查看哪些分支**尚未**合并。
 
 ### 3.2 合并与冲突解决
 - `git merge <name>`：合并指定分支到当前分支。
@@ -50,20 +70,55 @@
 4. **中止合并**：若想撤销合并过程，执行 `git merge --abort`。
 
 ### 3.3 差异比较 (Detailed git diff)
-- `git diff`：比较**工作区** (Working Directory) 与**暂存区** (Index) 的差异。
-- `git diff --cached` 或 `git diff --staged`：比较**暂存区**与**最后一次提交** (HEAD) 的差异。
-- `git diff HEAD`：比较**工作区**与**最后一次提交**的差异。
-- `git diff <branch1> <branch2>`：比较两个分支之间的差异。
-- `git diff <commit1> <commit2>`：比较两次提交之间的差异。
-- `git diff --stat`：只显示统计摘要，而不显示具体的代码改动。
 
-### 3.3 理解 HEAD~1 与 相对引用
-Git 使用 `^` 和 `~` 来进行相对引用：
-- `HEAD`：当前所在的提交。
-- `HEAD~1` (或 `HEAD~`)：当前提交的**父提交**。
-- `HEAD~2`：父提交的父提交（爷爷提交）。
-- `HEAD^`：也是父提交。
-- **区别**：`~n` 总是沿着第一父节点回溯；`^n` 在合并提交时用于选择第几个父节点（例如 `HEAD^2` 指向合并进来的第二个分支）。
+**比较工作区 / 暂存区 / 提交**
+- `git diff`：比较**工作区** (Working Directory) 与**暂存区** (Index) 的差异（尚未 `git add` 的变化）。
+- `git diff --cached` 或 `git diff --staged`：比较**暂存区**与**最后一次提交** (HEAD) 的差异（已 `add` 但未 `commit` 的变化）。
+- `git diff HEAD`：比较**工作区**与**最后一次提交**的所有差异（包含已暂存和未暂存）。
+
+**指定范围比较**
+- `git diff <commit1> <commit2>`：比较两次提交之间的差异。
+- `git diff <branch1> <branch2>`：查看两个分支最新提交的完整差异（双点，比较两个端点）。
+- `git diff <branch1>...<branch2>`：**三点语法**。找到两个分支的**共同祖先**，然后比较 `<branch2>` 相对于该祖先引入了哪些变化（即"这个分支独有的改动"）。用于 Code Review 时非常实用。
+- `git diff HEAD~1 HEAD`：查看最近一次提交引入的改动（等价于 `git show HEAD`）。
+
+**只看特定文件**
+- `git diff <file>`：只查看某个具体文件的工作区差异。
+- `git diff <commit1> <commit2> -- <file>`：只查看某个文件在两次提交之间的差异。
+
+**控制输出格式**
+- `git diff --stat`：只显示**统计摘要**（修改了哪些文件，增删了多少行），不显示具体代码。
+- `git diff --name-only`：只列出**发生变化的文件名**，不显示任何内容。
+- `git diff --word-diff`：以**单词**为单位显示差异，而非以行为单位，对改动较小的文本非常清晰。
+
+### 3.4 理解 HEAD~1 与相对引用
+
+在 Git 中，`HEAD` 是一个指针，指向**当前所在的提交**。你可以用 `~` 和 `^` 从它出发向历史回溯，无需记忆 commit ID。
+
+**`~`（波浪号）：沿第一父节点回溯**
+- `HEAD` 或 `HEAD~0`：当前提交本身。
+- `HEAD~1`（或简写 `HEAD~`）：当前提交的**父提交**（上一个提交）。
+- `HEAD~2`：父提交的父提交（往前数两步）。
+- `HEAD~n`：往前数 n 步的提交，始终沿**第一父节点**（first-parent）路径。
+
+**`^`（脱字符）：选择第几个父节点**
+- `HEAD^`：等同于 `HEAD~1`，即父提交。
+- `HEAD^2`：在**合并提交**（merge commit）中，选择**第二个父节点**，即被合并进来的那个分支的最新提交。
+- `HEAD~1^2`：往前一步，再取第二个父节点。
+
+**图示示例**：
+```
+A --- B --- C --- D (HEAD, main)
+              \
+               E --- F (feature, 已被合并入 D)
+```
+- `HEAD~1` = `C`（D 的第一父节点）
+- `HEAD^2` = `F`（D 是合并提交，^2 指向被合并来的分支）
+
+**实际应用**：
+- `git diff HEAD~1`：查看最近一次提交改动了什么。
+- `git reset --soft HEAD~1`：撤销最近一次提交，保留代码在暂存区。
+- `git show HEAD~2`：查看倒数第三个提交的内容。
 
 ---
 
@@ -90,10 +145,19 @@ Git 使用 `^` 和 `~` 来进行相对引用：
 - `git remote set-url origin <newurl>`：修改远程仓库地址。
 
 ### 5.2 协作流程
-- `git fetch`：**同步远程状态**。
-    - 它会下载远程仓库的所有新提交、分支和标签。
-    - 它会更新“远程追踪分支”（如 `origin/main`），但**不会**修改你本地的任何分支（如 `main`）。
-    - 你可以运行 `git diff main origin/main` 来查看远程有哪些新改动，而不用担心弄乱本地代码。
+- `git fetch`：**同步远程状态**（只下载，不修改本地分支）。
+    - 它会**下载**远程仓库的所有新提交、分支和标签到本地。
+    - 它会更新"远程追踪分支"（如 `origin/main`），但**不会**修改你的任何本地分支（如 `main`）。
+    - 这意味着你可以安全地"看一眼"远程有什么新内容，完全不影响本地的工作。
+    - `git fetch origin`：拉取名为 `origin` 的远程仓库的所有更新。
+    - `git fetch origin <branch>`：只拉取远程特定分支的更新。
+    - `git fetch --all`：拉取**所有**已配置的远程仓库的更新。
+    - **fetch 后的典型工作流**：
+      ```bash
+      git fetch origin          # 1. 下载远程更新，不影响本地
+      git diff main origin/main # 2. 对比本地和远程的差异
+      git merge origin/main     # 3. 确认无误后，将远程变更合并到本地（或用 rebase）
+      ```
 - `git pull --rebase`：**进阶推荐**。相当于 `git fetch` + `git rebase`。拉取并变基，保持提交历史线性整洁。
 - `git push origin <branch>`：推送本地提交到远程分支。
 
