@@ -71,10 +71,12 @@ winget install Microsoft.PowerToys
 4. 按住 `Shift` 键拖动窗口到目标区域，窗口会自动吸附
 
 **快捷键**：
+
 - `Win + Shift + ~`：打开布局编辑器（可自定义）
 - 拖动窗口时按住 Shift：激活区域吸附
 
 **进阶技巧**：
+
 - 可以创建多个布局，在不同场景切换使用
 - 支持多显示器，每个屏幕可以有独立布局
 - 可设置"闪过即吸附"，无需一直按住 Shift
@@ -89,17 +91,18 @@ winget install Microsoft.PowerToys
 
 **功能列表**：
 
-| 功能 | 示例 |
-|------|------|
-| 启动应用 | 输入 "chrome" 打开 Chrome |
-| 搜索文件 | 输入文件名或路径 |
-| 计算器 | 输入 `123*45` 直接显示结果 |
-| 打开网址 | 输入 URL 直接访问 |
+| 功能     | 示例                           |
+| -------- | ------------------------------ |
+| 启动应用 | 输入 "chrome" 打开 Chrome      |
+| 搜索文件 | 输入文件名或路径               |
+| 计算器   | 输入 `123*45` 直接显示结果     |
+| 打开网址 | 输入 URL 直接访问              |
 | 系统命令 | 输入 "lock" 锁屏、"sleep" 睡眠 |
-| 窗口切换 | 输入窗口名称快速切换 |
-| 单位换算 | 输入 `100km to miles` |
+| 窗口切换 | 输入窗口名称快速切换           |
+| 单位换算 | 输入 `100km to miles`          |
 
 **插件扩展**：
+
 - 可启用/禁用各种插件（如 Windows 搜索、计算器、Shell 等）
 - 可设置搜索范围、排除目录等
 
@@ -112,10 +115,12 @@ winget install Microsoft.PowerToys
 **两个主要功能**：
 
 #### 键重映射（Remap keys）
+
 - 将一个按键的功能替换为另一个按键
 - 例如：将 Caps Lock 映射为 Ctrl 或 Esc
 
 #### 快捷键重映射（Remap shortcuts）
+
 - 将一个快捷键组合替换为另一个
 - 例如：将 `Ctrl + C` 映射为 `Ctrl + Insert`
 
@@ -128,6 +133,7 @@ winget install Microsoft.PowerToys
 5. 点击"确定"保存
 
 **常用映射建议**：
+
 - Caps Lock → Ctrl（程序员常用）
 - Caps Lock → Esc（Vim 用户常用）
 - 右 Alt → 左 Alt（适应不同键盘布局）
@@ -141,6 +147,7 @@ winget install Microsoft.PowerToys
 **功能详情**：
 
 #### 预览面板增强
+
 - 支持 Markdown (.md) 文件预览
 - 支持 SVG 图片预览
 - 支持 PDF 预览
@@ -148,6 +155,7 @@ winget install Microsoft.PowerToys
 - 支持源代码文件预览（带语法高亮）
 
 #### 缩略图增强
+
 - SVG 文件显示缩略图
 - PDF 文件显示首页缩略图
 - HEIC/HEIF 图片格式支持
@@ -172,12 +180,14 @@ winget install Microsoft.PowerToys
 4. 可选择是否保留原图、调整质量等
 
 **预设尺寸**：
+
 - 小（适合电子邮件）
 - 中（适合网页）
 - 大（适合桌面背景）
 - 手机
 
 **自定义选项**：
+
 - 可添加自己的预设尺寸
 - 可选择输出格式（保持原格式或转换为 JPEG/PNG）
 
@@ -197,13 +207,13 @@ winget install Microsoft.PowerToys
 
 **正则表达式示例**：
 
-| 目标 | 搜索模式 | 替换内容 |
-|------|----------|----------|
-| 替换空格为下划线 | `\s` | `_` |
-| 添加前缀 | `^` | `prefix_` |
-| 添加后缀 | `$` | `_suffix` |
-| 删除数字 | `\d+` | （空） |
-| 提取特定部分 | `(.*)(\d+)(.*)` | `$2_$1$3` |
+| 目标             | 搜索模式        | 替换内容  |
+| ---------------- | --------------- | --------- |
+| 替换空格为下划线 | `\s`            | `_`       |
+| 添加前缀         | `^`             | `prefix_` |
+| 添加后缀         | `$`             | `_suffix` |
+| 删除数字         | `\d+`           | （空）    |
+| 提取特定部分     | `(.*)(\d+)(.*)` | `$2_$1$3` |
 
 ---
 
@@ -221,12 +231,14 @@ winget install Microsoft.PowerToys
 4. 颜色代码自动复制到剪贴板
 
 **支持的颜色格式**：
+
 - HEX：#RRGGBB 或 #RRGGBBAA
 - RGB：rgb(255, 255, 255)
 - HSL：hsl(360, 100%, 50%)
 - HSV
 
 **设置选项**：
+
 - 可选择默认输出格式
 - 可设置是否显示颜色历史
 
@@ -239,10 +251,12 @@ winget install Microsoft.PowerToys
 **激活方式**：长按 `Win` 键（超过 200ms）
 
 **显示内容**：
+
 - Windows 系统快捷键列表
 - 当前活动应用的快捷键（如果应用有注册快捷键）
 
 **设置选项**：
+
 - 可调整激活延迟时间
 - 可选择是否覆盖原生 Win 键行为
 
@@ -251,16 +265,19 @@ winget install Microsoft.PowerToys
 ### 9. Mouse Utils — 鼠标工具集
 
 #### Find My Mouse（查找鼠标）
+
 - **用途**：鼠标丢失时快速定位
 - **激活方式**：按两次左 Ctrl 键
 - **效果**：鼠标周围出现高亮圈
 
 #### Mouse Highlighter（鼠标高亮）
+
 - **用途**：演示时突出鼠标位置
 - **快捷键**：`Win + Shift + H`
 - **效果**：点击时显示高亮效果
 
 #### Mouse Jump（鼠标跳转）
+
 - **用途**：快速将鼠标跳到大屏幕另一位置
 - **快捷键**：自定义
 - **效果**：显示缩小版屏幕预览，点击跳转
@@ -281,6 +298,7 @@ winget install Microsoft.PowerToys
 4. 再次按下快捷键取消置顶
 
 **适用场景**：
+
 - 视频播放窗口需要一直在前台
 - 参考文档需要保持可见
 - 监控工具需要持续观察
@@ -292,15 +310,18 @@ winget install Microsoft.PowerToys
 **用途**：临时阻止 Windows 进入睡眠或锁屏状态。
 
 **模式选项**：
+
 - **无操作**：使用系统默认设置
 - **保持唤醒一小时**：临时阻止休眠
 - **保持唤醒（无限期）**：持续阻止，直到手动关闭
 
 **界面状态**：
+
 - 托盘图标显示当前状态
 - 绿色表示保持唤醒，灰色表示使用默认
 
 **适用场景**：
+
 - 长时间下载或上传文件
 - 远程会议期间
 - 运行耗时任务
@@ -314,6 +335,7 @@ winget install Microsoft.PowerToys
 **快捷键**：`Win + Shift + M`
 
 **测量模式**：
+
 - 边界检测：自动检测元素边界
 - 直线测量：手动绘制测量线
 - 矩形测量：测量矩形区域
@@ -334,6 +356,7 @@ winget install Microsoft.PowerToys
 4. 按数字键或点击选择
 
 **示例**：
+
 - `e` → é, è, ê, ë, ē 等变体
 - `a` → á, à, â, ä, ā 等变体
 - 支持多种语言字符
@@ -347,12 +370,14 @@ winget install Microsoft.PowerToys
 **位置**：`C:\Windows\System32\drivers\etc\hosts`
 
 **功能**：
+
 - 可视化编辑界面
 - 启用/禁用条目
 - 搜索过滤
 - 自动备份
 
 **适用场景**：
+
 - 开发测试时映射域名到本地
 - 屏蔽特定网站
 - 配置内网域名解析
@@ -364,6 +389,7 @@ winget install Microsoft.PowerToys
 **用途**：预览 .reg 文件内容，安全导入注册表。
 
 **功能**：
+
 - 可视化显示注册表文件结构
 - 预览将要添加/修改的键值
 - 安全导入，避免误操作
@@ -377,6 +403,7 @@ winget install Microsoft.PowerToys
 **快捷键**：`Win + Ctrl + V`（可自定义）
 
 **适用场景**：
+
 - 从网页复制内容粘贴到文档时去除格式
 - 复制代码时避免带入样式
 - 保持目标文档格式一致
@@ -392,10 +419,12 @@ winget install Microsoft.PowerToys
 **用途**：一键静音麦克风和摄像头，适用于视频会议。
 
 **快捷键**：
+
 - 静音麦克风：`Win + Shift + A`（可自定义）
 - 障眼摄像头：`Win + Shift + O`
 
 **功能**：
+
 - 系统级静音，适用于所有会议软件
 - 可遮挡摄像头画面
 - 托盘显示当前状态
@@ -413,6 +442,7 @@ winget install Microsoft.PowerToys
 3. 可选择结束进程
 
 **适用场景**：
+
 - 文件删除失败时查找原因
 - 文件被锁定无法编辑时解决冲突
 
@@ -425,6 +455,7 @@ winget install Microsoft.PowerToys
 **快捷键**：`Win + Shift + V`
 
 **功能**：
+
 - 粘贴为纯文本
 - 粘贴为 Markdown
 - 粘贴为 JSON 格式化
@@ -434,18 +465,18 @@ winget install Microsoft.PowerToys
 
 ## 常用快捷键速查
 
-| 功能 | 默认快捷键 | 说明 |
-|------|------------|------|
-| FancyZones 编辑器 | `Win + Shift + ~` | 打开窗口布局编辑 |
-| PowerToys Run | `Alt + Space` | 快速启动器 |
-| Color Picker | `Win + Shift + C` | 颜色选取 |
-| Shortcut Guide | 长按 `Win` | 显示快捷键列表 |
-| Find My Mouse | 双击左 `Ctrl` | 定位鼠标 |
-| Mouse Highlighter | `Win + Shift + H` | 高亮鼠标点击 |
-| Always On Top | `Win + Ctrl + T` | 窗口置顶 |
-| Screen Ruler | `Win + Shift + M` | 屏幕测量 |
-| Video Conference Mute | `Win + Shift + A` | 麦克风静音 |
-| Paste as Plain Text | `Win + Ctrl + V` | 纯文本粘贴 |
+| 功能                  | 默认快捷键        | 说明             |
+| --------------------- | ----------------- | ---------------- |
+| FancyZones 编辑器     | `Win + Shift + ~` | 打开窗口布局编辑 |
+| PowerToys Run         | `Alt + Space`     | 快速启动器       |
+| Color Picker          | `Win + Shift + C` | 颜色选取         |
+| Shortcut Guide        | 长按 `Win`        | 显示快捷键列表   |
+| Find My Mouse         | 双击左 `Ctrl`     | 定位鼠标         |
+| Mouse Highlighter     | `Win + Shift + H` | 高亮鼠标点击     |
+| Always On Top         | `Win + Ctrl + T`  | 窗口置顶         |
+| Screen Ruler          | `Win + Shift + M` | 屏幕测量         |
+| Video Conference Mute | `Win + Shift + A` | 麦克风静音       |
+| Paste as Plain Text   | `Win + Ctrl + V`  | 纯文本粘贴       |
 
 **注意**：所有快捷键都可以在 PowerToys 设置中自定义。
 
@@ -462,20 +493,24 @@ winget install Microsoft.PowerToys
 ### 效率组合使用
 
 **多窗口工作者**：
+
 - FancyZones（窗口布局） + Always On Top（关键窗口置顶）
 - 可快速建立高效的多窗口工作环境
 
 **开发者/程序员**：
+
 - Keyboard Manager（Caps Lock → Ctrl/Esc）
 - PowerToys Run（快速启动终端、IDE）
 - PowerRename（批量重命名代码文件）
 
 **设计师**：
+
 - Color Picker（颜色选取）
 - Image Resizer（快速调整图片）
 - FancyZones（设计软件布局）
 
 **内容创作者**：
+
 - Awake（长时间导出时保持唤醒）
 - Advanced Paste（格式化粘贴）
 - PowerToys Run（快速搜索素材）
@@ -489,15 +524,18 @@ winget install Microsoft.PowerToys
 ### 常见问题解决
 
 **问题：快捷键不生效**
+
 - 检查是否有其他软件占用相同快捷键
 - 确认 PowerToys 正在运行
 - 尝试重新映射快捷键
 
 **问题：FancyZones 吸附不工作**
+
 - 确认拖动时按住 Shift 键（或启用"闪过即吸附"）
 - 检查目标窗口是否支持（某些 UWP 应用可能有问题）
 
 **问题：PowerToys Run 搜索慢**
+
 - 检查搜索范围，排除不必要的目录
 - 禁用不需要的插件
 
@@ -512,4 +550,78 @@ https://github.com/microsoft/PowerToys
 
 ---
 
-*文档生成日期：2026-04-25*
+_文档生成日期：2026-04-25_
+我先为你检索最新的 PowerToys 使用教程和功能介绍，整理一份详尽的指南。我已检索到最新的 PowerToys 官方文档与使用教程资料，下面为你整理一份详尽的使用指南。
+PowerToys 是微软官方免费开源的 Windows 增强工具集，涵盖窗口管理、批量改名、取色、OCR、快速启动等近三十个实用模块，安装后通过快捷键即可全面提升 Win10/11 的操作效率。​
+一、安装与基础配置
+PowerToys 是微软官方维护的开源项目，完全免费，支持 Windows 10（1903 及以上）和 Windows 11。目前最新稳定版为 0.90 系列，更新频率较高，建议开启自动更新以获取新功能。
+三种常用安装方式：​
+第一种是从 GitHub Release 页面下载 PowerToysSetup-0.##.#-x64.exe（或 arm64）可执行文件，双击按提示安装即可。第二种是通过 winget 命令行一键安装，在 PowerShell 中运行 winget install --id Microsoft.PowerToys --source winget。第三种是社区维护的 Chocolatey（choco install powertoys）或 Scoop（scoop bucket add extras; scoop install powertoys）。Microsoft Learn
+安装完成后，系统托盘会出现 PowerToys 图标，双击打开设置主界面。建议在"常规"里开启"开机自启动"、"显示系统托盘图标"，并根据需要决定是否"以管理员身份运行"——某些模块（如对以管理员权限运行的窗口使用 FancyZones、裁剪和锁定）必须在管理员模式下才能生效。另外，新版本引入了快捷键冲突检测功能，当多个模块使用相同快捷键时会弹窗提示，可在此处重新分配或忽略。Microsoft Learn
+二、窗口与工作区管理类
+FancyZones 花式窗口布局
+这是 PowerToys 最核心也是最广为人知的功能，解决了 Windows 原生窗口吸附只能左右二分或四分的局限。按 Win+Shift+`（ESC 下面那个反引号键）打开布局编辑器，可选择预设模板（栏目、网格、优先网格等），也可自定义"网格"（不可重叠）或"画布"（可重叠）两种模式。网格模式下，选中多个区域可合并，在区域中间点击可拆分，并能自由调整各区域宽高比例。Microsoft Learn
+使用时，按住 Shift 键拖动窗口，即可将其吸附到任意自定义分区。建议在设置中勾选"覆盖 Windows 贴靠快捷键"，这样就能用 Win+方向键 在区域间移动窗口；Win+PgUp/PgDn 用于切换同一区域内堆叠的窗口；Win+Ctrl+Alt+[数字] 可一键应用不同的自定义布局。这个工具对于超宽屏、4K 大屏或者多显示器用户尤其实用，可以为直播、办公、写作、编程等不同场景分别预设布局。
+Workspaces 工作区
+一键启动一组预设的应用组合，并按照自定义的窗口位置排布。例如你可以创建一个"编程工作区"，一点即可同时打开 VS Code、浏览器、终端并自动分别放到左右两边。在 Workspaces Editor 中可配置每个应用的启动位置、尺寸，甚至是否"以管理员身份启动"，也能生成桌面快捷方式直接启动整组应用。XDA Developers
+Always on Top 始终置顶
+切换到目标窗口后按 Win+Ctrl+T，该窗口即被钉在最上层，边框变蓝（样式可自定义），再次按相同快捷键解除。支持同时置顶多个窗口，也支持"游戏模式下不激活"和自定义排除列表。对于需要边看视频边工作、或参考计算器窗口时非常方便。
+Crop And Lock 裁剪和锁定
+按 Win+Ctrl+Shift+T 框选一个窗口中的局部区域，该区域会在新的置顶窗口中实时显示（缩略图模式），原窗口内容变化会同步更新。若按 Win+Ctrl+Shift+R，则是直接把原窗口裁剪成只显示选中区域（重设模式），关闭后原窗口会恢复。用来监控只占窗口一角的直播弹幕或进度条非常合适。
+三、启动与搜索类
+PowerToys Run 快速启动
+类似 macOS 的 Spotlight，按 Alt+Space 唤出搜索框。它比开始菜单快得多，支持：搜索应用并回车打开、搜索本地文件、输入 > 执行 shell 命令、输入 = 进行数学运算（结果自动复制到剪贴板）、输入 ?? 网页搜索、输入 #guid 生成 GUID、输入时间计算、单位换算等。PowerToys Run 采用插件架构，可在设置中启用/禁用各种插件。Microsoft Learn
+此外，新版本推出了 PowerToys Run 的进化版——Command Palette（命令面板）​，提供更加统一的命令、应用、工具访问界面，逐步成为推荐的主力启动器。PCMag
+Command Not Found 找不到指令
+一个 PowerShell 7 模块，当你在终端输入了未安装的命令导致报错时，它会自动识别并推荐对应的 WinGet 软件包让你一键安装。对经常在命令行工作的开发者特别有用。
+Shortcut Guide 快捷键指南
+长按 Win 键（可在设置中改为双击）会出现浮层，显示当前桌面状态下所有可用的 Windows 快捷键（如 Win+D 显示桌面、Win+E 打开资源管理器等），对初学者和忘性大的用户非常友好。
+四、文件资源管理器增强
+File Explorer Add-ons 预览增强
+为资源管理器的"预览窗格"（Alt+P）和缩略图增加对更多文件格式的支持，包括 SVG、Markdown（.md）、PDF（前 10 页）、STL、G-code、QOI 等格式。在设置中逐项开启后，选中对应文件即可在预览窗格中查看，无需打开任何软件。
+Peek 速览
+在资源管理器中选中文件后按 Ctrl+空格，即可弹出轻量预览窗口，支持图片、视频、文本、PDF、Markdown 等多种格式，用方向键可快速切换到上一个/下一个文件。再按 Ctrl+空格 关闭。是 macOS "Quick Look" 的平替。
+PowerRename 批量重命名
+选中若干文件后右键菜单 → PowerRename。在"搜索"栏输入要替换的原文本（支持正则表达式），在"替换为"栏输入新文本，右侧实时预览结果。可配合变量（如 $N 表示序号、$YYYY、$MM 表示年月等），以及大小写变换、排除扩展名、仅作用于选中的子文件夹等选项。批量整理照片、文档归档时的大杀器。
+File Locksmith 文件锁匠
+在资源管理器中右键某个文件或文件夹 → "哪些进程正在使用此文件？"，即可列出所有占用该文件的进程，并允许直接结束。解决了"无法删除文件：文件正被另一个程序占用"这个经典困扰。
+Image Resizer 图像大小调整
+右键一张或多张图片 → "调整图像大小"，在弹窗中选择预设尺寸（小/中/大/手机）或自定义尺寸，支持保持纵横比、指定格式和质量。可直接覆盖原文件或生成副本。
+Hosts File Editor 主机文件编辑器
+为修改 hosts 文件提供图形化界面，可增删改 IP 映射、添加注释、按条件筛选，并支持临时启用/禁用某条规则（而不必删除），搭配管理员权限使用。
+New+ 新建+​
+扩展资源管理器"右键 → 新建"菜单，允许你自定义个性化的文件/文件夹模板。例如添加一个"新建 Markdown 博客模板"、"新建项目脚手架文件夹"等，一键生成。
+Registry Preview 注册表预览
+可视化查看和编辑 .reg 文件，无需直接导入系统即可预览其将要修改的注册表键值，降低误操作风险。
+五、输入与键盘类
+Keyboard Manager 键盘管理器
+提供两大功能：重新映射按键（把一个键改成另一个键的功能，如把 CapsLock 改成 Esc）和重新映射快捷键（把一组组合键映射到另一组或单键上，如把 PrtSc 改为 Ctrl+Shift+S）。对于需要改造键盘布局或迁移 Mac/Linux 使用习惯的用户必备。
+Quick Accent 快速重音
+方便输入带重音符号的字符（如 é、ö、ñ、€）。按住对应字母（如 e）后按空格键不放开，会弹出候选重音字符，用方向键选择即可。主要服务于多语种输入用户，中文用户一般用不上。
+Advanced Paste / Paste as Plain Text 高级粘贴 / 纯文本粘贴
+Ctrl+Alt+V 以纯文本形式粘贴（去除所有格式），解决从网页或 Word 复制到其他地方格式错乱的问题。升级版 Advanced Paste 还支持粘贴为 JSON、XML、Markdown 等格式，并可选地接入 AI，支持用自然语言指令转换剪贴板内容。
+Text Extractor 文本提取器（OCR）​
+按 Win+Shift+T 激活，选择矩形区域，区域内文字会自动识别并复制到剪贴板，支持中英文及多种语言。对提取图片中、视频截图中、不可复制的文档中的文字极为方便，相当于内置了"天若 OCR"的基础能力。
+六、辅助工具类
+Color Picker 颜色选择器
+按 Win+Shift+C 启动，将鼠标移到屏幕上任意位置即可拾取该像素的颜色值，点击后弹出详细面板，支持复制为 HEX、RGB、HSL、HSV、CMYK 等多种格式，自动保存历史记录，并提供色彩相邻色阶参考。可在设置中配置默认的复制格式。
+Screen Ruler 屏幕标尺
+按 Win+Shift+M 启动，提供水平、垂直、矩形、十字等多种测量模式，基于图像边缘检测自动吸附像素边界，精度高。与 Snipaste 类似但无需额外安装。
+Mouse Utilities 鼠标实用工具
+包含多个子功能：查找我的鼠标（双击左 Ctrl 键或摇动鼠标，屏幕变暗并高亮指针位置，大屏/多屏必备）、鼠标荧光笔（左右键按下时显示彩色高亮圈，录屏演示用）、鼠标指针十字线（以指针为中心绘制贯穿全屏的十字线，精确定位）、鼠标跳转（快速在多显示器间跳转指针）。
+Mouse Without Borders 无边框鼠标
+用一套键盘和鼠标控制最多 4 台电脑，鼠标移动到屏幕边缘即可切换到另一台机器，剪贴板内容（最大 100MB）和文件拖拽也能跨机共享。非常适合多机开发者和内容创作者。
+Awake 保持唤醒
+让电脑不休眠，提供"继续使用当前电源计划"、"无限期保持唤醒"、"保持唤醒一段时间"、"保持唤醒直至指定时间"四种模式，可选择是否同时保持屏幕开启。比改 Windows 电源计划省事得多，适用于长时间下载、渲染、运行脚本等场景。任务栏图标支持快速切换。
+Light Switch 灯开关
+按一天中的不同时间自动切换 Windows 浅色/深色主题，支持日落日出自动切换或自定义时间点。
+Video Conference Mute 视频会议静音
+快捷键一键静音/解除静音麦克风和摄像头（Win+Shift+Q 全部切换，Win+Shift+A 切麦克风，Win+Shift+O 切摄像头），在任何会议软件下都能用，解决"临时需要静音但不知道切到哪个窗口"的尴尬。
+Environment Variables 环境变量
+图形化管理系统和用户环境变量，并支持"配置文件"——即将多个变量组合为一套，一键切换。例如开发者可以准备"Java 8 开发环境"和"Java 17 开发环境"两个配置，随时切换。
+ZoomIt 屏幕放大与标注
+原本来自 Sysinternals，现已集成进 PowerToys。按 Ctrl+1 放大屏幕，可用鼠标或方向键移动；按 Ctrl+2 进入绘图模式可在屏幕上标注；Ctrl+3 启动倒计时。适合教学、演示、录屏讲解。
+七、进阶使用建议
+要想把 PowerToys 真正发挥价值，建议先在"设置 → 常规"开启"开机启动"和"自动更新"，然后逐一浏览各模块的设置页面，把默认快捷键改为更顺手的组合（注意避开与系统或常用软件的冲突）。对于新手，最值得优先掌握的"四件套"是：FancyZones（彻底改变窗口管理效率）、PowerToys Run / Command Palette（日常启动与搜索）、PowerRename（文件整理神器）、Color Picker + Text Extractor（日常生产力小工具）。异次元软件下载
+另外，由于 PowerToys 处于活跃开发中，每月几乎都有新版本发布，建议关注 GitHub 仓库 的 Release 页了解最新模块——例如近期新增的 Light Switch、PowerDisplay、Grab And Move 等都还在持续完善中。官方完整文档可访问 Microsoft Learn 的 PowerToys 专区，每个模块都有详细的参数解释与案例。
+希望这份指南能帮你把 Windows 调教成最顺手的生产力工具。用熟之后你会发现，很多原本需要第三方付费软件才能做到的事——截图 OCR、窗口管理、批量改名、取色、跨机控制——PowerToys 都已经免费且原生地解决了。
